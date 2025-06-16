@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Find Kids Sports Activities</title>
-  <link href="styles.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
-  <header><h1>Sports Finder NL</h1><a href="submit.html">Submit Activity</a></header>
+  <header>
+    <h1>Sports Finder NL</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="submit.html">Submit Activity</a>
+    </nav>
+  </header>
+
   <main>
-    <input id="search" placeholder="Search sport or city..." />
-    <div id="results"></div>
+    <section class="hero">
+      <h2>Find sports activities for kids across the Netherlands</h2>
+      <img src="images/sports-hero.jpg" alt="Kids playing sports" />
+    </section>
+
+    <section class="search-section">
+      <input id="search" placeholder="Search by sport or city..." />
+      <div id="results"></div>
+    </section>
   </main>
-  <footer><p>&copy; 2025 Sports Finder NL</p></footer>
+
+  <footer>
+    <p>&copy; 2025 Sports Finder NL</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
