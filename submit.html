@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Submit Activity</title>
+  <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>Submit a Sport Activity</h1>
-  <form name="activity" method="POST" data-netlify="true">
-    <label>Club Name: <input type="text" name="club-name" required></label>
-    <label>Sport Type: <input type="text" name="sport-type" required></label>
-    <label>City: <input type="text" name="city" required></label>
-    <label>Age Range: <input type="text" name="age-range" required></label>
-    <label>Email: <input type="email" name="email" required></label>
-    <button type="submit">Submit</button>
-  </form>
+  <header>
+    <h1>Submit a Sport Activity</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="submit.html">Submit Activity</a>
+    </nav>
+  </header>
+
+  <main>
+    <form name="activity" method="POST" data-netlify="true" class="submit-form">
+      <label>Club Name: <input type="text" name="club-name" required></label>
+      <label>Sport Type: <input type="text" name="sport-type" required></label>
+      <label>City: <input type="text" name="city" required></label>
+      <label>Age Range: <input type="text" name="age-range" required></label>
+      <label>Email: <input type="email" name="email" required></label>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sports Finder NL</p>
+  </footer>
 </body>
 </html>
