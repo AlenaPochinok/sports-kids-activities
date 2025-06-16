@@ -1,0 +1,5 @@
+[
+  { "sport": "Football", "city": "Amsterdam", "age": "6-12" },
+  { "sport": "Swimming", "city": "Rotterdam", "age": "5-10" },
+  { "sport": "Tennis", "city": "Utrecht", "age": "7-14" }
+]
