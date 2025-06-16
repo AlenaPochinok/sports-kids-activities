@@ -1,9 +1,9 @@
-/* Reset and basics */
+/* Global */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f7fa;
+  background-color: #f9f9f9;
   color: #333;
 }
 
@@ -11,26 +11,30 @@ body {
 header {
   background-color: #1e90ff;
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.5rem 1rem;
   text-align: center;
 }
-header nav {
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+nav {
   margin-top: 0.5rem;
 }
-header nav a {
+nav a {
   color: white;
   margin: 0 1rem;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
-header nav a:hover {
+nav a:hover {
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 .hero img {
   width: 90%;
@@ -40,9 +44,9 @@ header nav a:hover {
   margin-top: 1rem;
 }
 
-/* Search Section */
+/* Search & Filters */
 .search-section {
-  padding: 2rem;
+  padding: 2rem 1rem;
   max-width: 800px;
   margin: auto;
 }
@@ -54,12 +58,26 @@ input#search {
   border-radius: 8px;
   margin-bottom: 1rem;
 }
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.filters select {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Results */
 #results div {
   background: white;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 /* Footer */
@@ -69,4 +87,11 @@ footer {
   color: white;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+/* Mobile-friendly */
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+  }
 }
