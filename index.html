@@ -1,44 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Find Kids Sports Activities</title>
-  <link href="styles.css" rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body>
-  <header>
-    <h1>Sports Finder NL</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="submit.html">Submit Activity</a>
-    </nav>
-  </header>
+<main>
+  <section class="filters">
+    <input id="search" placeholder="Search sport or city..." />
 
-  <main>
-    <section class="hero">
-      <h2>Find sports activities for kids across the Netherlands</h2>
-      <img src="images/sports-hero.jpg" alt="Kids playing sports" />
-    </section>
+    <select id="filter-sport">
+      <option value="">All Sports</option>
+      <option value="Football">Football</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Tennis">Tennis</option>
+      <!-- Add more options if needed -->
+    </select>
 
-    <section class="search-section">
-      <input id="search" type="text" placeholder="Search by sport or city..." />
-      
-      <!-- Future filter placeholders -->
-      <div class="filters">
-        <select><option>Filter by Sport</option></select>
-        <select><option>Filter by Age</option></select>
-        <select><option>Filter by Price</option></select>
-      </div>
+    <select id="filter-city">
+      <option value="">All Cities</option>
+      <option value="Amsterdam">Amsterdam</option>
+      <option value="Rotterdam">Rotterdam</option>
+      <option value="Utrecht">Utrecht</option>
+    </select>
 
-      <div id="results"></div>
-    </section>
-  </main>
+    <select id="filter-age">
+      <option value="">All Ages</option>
+      <option value="5-10">5–10</option>
+      <option value="6-12">6–12</option>
+      <option value="7-14">7–14</option>
+    </select>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Sports Finder NL</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <div id="results"></div>
+</main>
