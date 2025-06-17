@@ -9,7 +9,6 @@ function initMap() {
 }
 
 function updateMapMarkers(data) {
-  // Remove old markers
   markers.forEach(marker => map.removeLayer(marker));
   markers = [];
 
@@ -24,8 +23,8 @@ function updateMapMarkers(data) {
 }
 
 function displayResults(data) {
-  const resultsContainer = document.getElementById('results');
-  resultsContainer.innerHTML = data.length
+  const container = document.getElementById('results');
+  container.innerHTML = data.length
     ? data.map(item =>
         `<div class="result-card">
           <h3>${item.sport}</h3>
@@ -33,7 +32,7 @@ function displayResults(data) {
           <p><strong>Age:</strong> ${item.age}</p>
         </div>`
       ).join('')
-    : `<p>No results found.</p>`;
+    : '<p>No results found.</p>';
 }
 
 function applyFilters(data) {
@@ -42,48 +41,45 @@ function applyFilters(data) {
   const selectedCity = document.getElementById('filter-city').value;
   const selectedAge = document.getElementById('filter-age').value;
 
-  return data.filter(item => {
-    const matchesQuery =
-      item.sport.toLowerCase().includes(query) ||
-      item.city.toLowerCase().includes(query);
-
-    const matchesSport = selectedSport === '' || item.sport === selectedSport;
-    const matchesCity = selectedCity === '' || item.city === selectedCity;
-    const matchesAge = selectedAge === '' || item.age === selectedAge;
-
-    return matchesQuery && matchesSport && matchesCity && matchesAge;
-  });
+  return data.filter(item =>
+    (item.sport.toLowerCase().includes(query) || item.city.toLowerCase().includes(query)) &&
+    (selectedSport === '' || item.sport === selectedSport) &&
+    (selectedCity === '' || item.city === selectedCity) &&
+    (selectedAge === '' || item.age === selectedAge)
+  );
 }
 
 function populateDropdowns(data) {
-  const sportSet = new Set();
-  const citySet = new Set();
-  const ageSet = new Set();
+  const sports = new Set();
+  const cities = new Set();
+  const ages = new Set();
 
   data.forEach(item => {
-    sportSet.add(item.sport);
-    citySet.add(item.city);
-    ageSet.add(item.age);
+    sports.add(item.sport);
+    cities.add(item.city);
+    ages.add(item.age);
   });
 
   const sportSelect = document.getElementById('filter-sport');
   const citySelect = document.getElementById('filter-city');
   const ageSelect = document.getElementById('filter-age');
 
-  sportSet.forEach(sport => {
+  sports.forEach(sport => {
     sportSelect.innerHTML += `<option value="${sport}">${sport}</option>`;
   });
-  citySet.forEach(city => {
+
+  cities.forEach(city => {
     citySelect.innerHTML += `<option value="${city}">${city}</option>`;
   });
-  ageSet.forEach(age => {
+
+  ages.forEach(age => {
     ageSelect.innerHTML += `<option value="${age}">${age}</option>`;
   });
 }
 
 function loadAndFilterData() {
   fetch('data.json')
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
       const filtered = applyFilters(data);
       displayResults(filtered);
@@ -93,14 +89,14 @@ function loadAndFilterData() {
 
 function initFilters() {
   fetch('data.json')
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
       populateDropdowns(data);
       loadAndFilterData();
     });
 }
 
-// Event Listeners
+// Event listeners
 document.getElementById('search').addEventListener('input', loadAndFilterData);
 document.getElementById('filter-sport').addEventListener('change', loadAndFilterData);
 document.getElementById('filter-city').addEventListener('change', loadAndFilterData);
