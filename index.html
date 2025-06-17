@@ -1,31 +1,58 @@
-<main>
-  <section class="filters">
-    <input id="search" placeholder="Search sport or city..." />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Kids Sports Activities</title>
+  <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <header>
+    <h1>Sports Finder NL</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="submit.html">Submit Activity</a>
+    </nav>
+  </header>
 
-    <select id="filter-sport">
-      <option value="">All Sports</option>
-      <option value="Football">Football</option>
-      <option value="Swimming">Swimming</option>
-      <option value="Tennis">Tennis</option>
-      <!-- Add more options if needed -->
-    </select>
+  <main>
+    <section class="filters">
+      <input id="search" placeholder="Search sport or city..." />
 
-    <select id="filter-city">
-      <option value="">All Cities</option>
-      <option value="Amsterdam">Amsterdam</option>
-      <option value="Rotterdam">Rotterdam</option>
-      <option value="Utrecht">Utrecht</option>
-    </select>
+      <select id="filter-sport">
+        <option value="">All Sports</option>
+        <option value="Football">Football</option>
+        <option value="Swimming">Swimming</option>
+        <option value="Tennis">Tennis</option>
+        <!-- Add more options if needed -->
+      </select>
 
-    <select id="filter-age">
-      <option value="">All Ages</option>
-      <option value="5-10">5–10</option>
-      <option value="6-12">6–12</option>
-      <option value="7-14">7–14</option>
-    </select>
-  </section>
+      <select id="filter-city">
+        <option value="">All Cities</option>
+        <option value="Amsterdam">Amsterdam</option>
+        <option value="Rotterdam">Rotterdam</option>
+        <option value="Utrecht">Utrecht</option>
+      </select>
 
-  <div id="results"></div>
-</main>
-<h2>Club Locations</h2>
-<div id="map" style="height: 400px; margin-bottom: 1rem;"></div>
+      <select id="filter-age">
+        <option value="">All Ages</option>
+        <option value="5-10">5–10</option>
+        <option value="6-12">6–12</option>
+        <option value="7-14">7–14</option>
+      </select>
+    </section>
+
+    <h2>Club Locations</h2>
+    <div id="map" style="height: 400px; margin-bottom: 1rem;"></div>
+
+    <div id="results"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sports Finder NL</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</body>
+</html>
