@@ -10,7 +10,7 @@ function initMap() {
 
 function updateMapMarkers(data) {
   // Remove old markers
-  markers.forEach(m => map.removeLayer(m));
+  markers.forEach(marker => map.removeLayer(marker));
   markers = [];
 
   data.forEach(item => {
@@ -24,9 +24,16 @@ function updateMapMarkers(data) {
 }
 
 function displayResults(data) {
-  document.getElementById('results').innerHTML = data.map(item =>
-    `<div><strong>${item.sport}</strong> in ${item.city} (Ages ${item.age})</div>`
-  ).join('');
+  const resultsContainer = document.getElementById('results');
+  resultsContainer.innerHTML = data.length
+    ? data.map(item =>
+        `<div class="result-card">
+          <h3>${item.sport}</h3>
+          <p><strong>City:</strong> ${item.city}</p>
+          <p><strong>Age:</strong> ${item.age}</p>
+        </div>`
+      ).join('')
+    : `<p>No results found.</p>`;
 }
 
 function applyFilters(data) {
@@ -48,6 +55,32 @@ function applyFilters(data) {
   });
 }
 
+function populateDropdowns(data) {
+  const sportSet = new Set();
+  const citySet = new Set();
+  const ageSet = new Set();
+
+  data.forEach(item => {
+    sportSet.add(item.sport);
+    citySet.add(item.city);
+    ageSet.add(item.age);
+  });
+
+  const sportSelect = document.getElementById('filter-sport');
+  const citySelect = document.getElementById('filter-city');
+  const ageSelect = document.getElementById('filter-age');
+
+  sportSet.forEach(sport => {
+    sportSelect.innerHTML += `<option value="${sport}">${sport}</option>`;
+  });
+  citySet.forEach(city => {
+    citySelect.innerHTML += `<option value="${city}">${city}</option>`;
+  });
+  ageSet.forEach(age => {
+    ageSelect.innerHTML += `<option value="${age}">${age}</option>`;
+  });
+}
+
 function loadAndFilterData() {
   fetch('data.json')
     .then(response => response.json())
@@ -58,10 +91,21 @@ function loadAndFilterData() {
     });
 }
 
+function initFilters() {
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      populateDropdowns(data);
+      loadAndFilterData();
+    });
+}
+
+// Event Listeners
 document.getElementById('search').addEventListener('input', loadAndFilterData);
 document.getElementById('filter-sport').addEventListener('change', loadAndFilterData);
 document.getElementById('filter-city').addEventListener('change', loadAndFilterData);
 document.getElementById('filter-age').addEventListener('change', loadAndFilterData);
 
+// Initialize
 initMap();
-loadAndFilterData();
+initFilters();
