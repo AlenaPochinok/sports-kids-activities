@@ -1,3 +1,10 @@
+let map = L.map('map').setView([52.3676, 4.9041], 7);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data © OpenStreetMap contributors'
+}).addTo(map);
+
+L.marker([52.3676, 4.9041]).addTo(map).bindPopup('Amsterdam');
 const API_KEY = "d74d10fb9e644c5faa0072b5fc0fbbd8";
 
 // Example club data
