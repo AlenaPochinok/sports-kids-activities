@@ -4,6 +4,7 @@
   "type": "module",
   "dependencies": {
     "node-fetch": "^3.3.2"
+<<<<<<< HEAD
   },
   "description": "",
   "main": "script.js",
@@ -13,4 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
+=======
+  }
+>>>>>>> fe1b06aced656d256668ebc9b543ae9deac05889
 }
