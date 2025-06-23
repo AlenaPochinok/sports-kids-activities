@@ -5,17 +5,5 @@
   "type": "module",
   "dependencies": {
     "node-fetch": "^3.3.2"
-<<<<<<< HEAD
-  },
-  "description": "",
-  "main": "script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-=======
   }
->>>>>>> fe1b06aced656d256668ebc9b543ae9deac05889
 }
