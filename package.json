@@ -1,6 +1,7 @@
 {
-  "name": "kindersport",
+  "name": "sports-kids-activities",
   "version": "1.0.0",
+  "description": "",
   "type": "module",
   "dependencies": {
     "node-fetch": "^3.3.2"
