@@ -1,0 +1,23 @@
+[
+  {
+    "sport": "Football",
+    "city": "Amsterdam",
+    "age": "6-12",
+    "lat": 52.3676,
+    "lng": 4.9041
+  },
+  {
+    "sport": "Swimming",
+    "city": "Rotterdam",
+    "age": "5-10",
+    "lat": 51.9225,
+    "lng": 4.4792
+  },
+  {
+    "sport": "Tennis",
+    "city": "Utrecht",
+    "age": "7-14",
+    "lat": 52.0907,
+    "lng": 5.1214
+  }
+]
